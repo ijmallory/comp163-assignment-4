@@ -1,4 +1,5 @@
 # comp163-assignment-4
+# This is a Semester Survival Simulator that executes "if/elif/else" and other operators such as "in, not in, and, or" to simulate a college students academic/social life. The "personal stats" can be modified to fit any one.
 # Personal stats
 student_name = 'Izeal Mallory'
 current_gpa = 3.56  # Float between 1.0 and 4.0
