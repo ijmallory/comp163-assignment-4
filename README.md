@@ -151,3 +151,5 @@ print(f"  Remaining Study Hours: {study_hours}")
 print(f"  Final Social Points: {social_points}")
 print(f"  Final Stress Level: {stress_level}")
 print("=" * 40)
+
+#I utilized Google Gemini to help me correct my syntax, grammar, and explain to my different types of indentations for the if/elif/else statements
