@@ -96,3 +96,57 @@ if study_focus in study_options:
 else:
     print("That subject is not a valid option. Your study hours are wasted.")
     stress_level += 5
+
+# Final Semester Assessment
+print("\nFinal Semester Assessment")
+print("Calculating final semester results...")
+
+# Final GPA adjustment
+if stress_level > 75:
+    current_gpa -= 0.2
+if social_points > 60:
+    current_gpa += 0.1
+
+# Ensure GPA is within bounds
+if current_gpa > 4.0:
+    current_gpa = 4.0
+elif current_gpa < 1.0:
+    current_gpa = 1.0
+
+# Check the GPA to make sure it's a float
+if type(current_gpa) is float:
+    print("Assessment is valid (GPA is a float). Proceeding to final results.")
+    if current_gpa >= 3.5:
+        print("\n**End result A: Dean's List")
+        if stress_level < 50:
+            print("You excelled academically AND maintained a healthy balance!")
+            if social_points > 50:
+                print("Your success was well-rounded. Truly a successful semester.")
+            else:
+                print("You could have been a bit more social, but the grades are great.")
+        else:
+            print("You succeeded academically but burned out doing it. Next semester, find a better balance.")
+    elif current_gpa >= 2.5:
+        print("\n**End Result B: The Steady Grinder")
+        if social_points >= 40:
+            print("A solid performance. You passed all your classes while keeping your life in check.")
+        else:
+            print("It was a struggle, and you felt the pressure. Your effort was enough, but just barely.")
+    else:
+        print("\n**End Result C: The Semester Reset**")
+        if social_points > 70:
+            print("You prioritized fun over studying. Your social calendar was full, but your grades suffered.")
+        else:
+            print("It was a difficult semester overall. Bad planning led to poor results.")
+else:
+    if type(current_gpa) not in float:
+        print("Error: The GPA variable is a incorrect type. Assessment failed")
+
+# Display Final stats
+print("\n" + "=" * 40)
+print("FINAL SEMESTER STATISTICS")
+print(f"  Final GPA: {current_gpa:.2f}")
+print(f"  Remaining Study Hours: {study_hours}")
+print(f"  Final Social Points: {social_points}")
+print(f"  Final Stress Level: {stress_level}")
+print("=" * 40)
