@@ -63,3 +63,36 @@ else:
     print("Invalid choice. You will receive a standard load by default.")
     study_hours += 15
     stress_level += 5
+
+# Study Strategy Decision
+print("\nStudy Strategy Decision")
+print("Which subject will you focus your study hours on?")
+study_options = ["Programming", "Math", "English", "History"]
+print(study_options)
+study_focus = input("Your choice: ")
+if study_focus in study_options:
+    print(f"Focusing on **{study_focus}**.")
+    if (study_hours >= 35) and (stress_level < 60):
+        print("You're studying smart and keeping your stress low. Great combination!")
+        current_gpa += 0.2
+        social_points += 5
+
+    elif (study_hours < 20) or (stress_level > 70):
+        print("Your study habits are concerning. Stress or lack of effort will hurt your performance.")
+        current_gpa -= 0.2
+        social_points -= 5
+
+    elif (study_focus not in ["Programming", "Math"]) and (current_gpa < 3.0):
+        print("A key subject might be slipping. Focusing elsewhere might be a mistake right now.")
+        current_gpa -= 0.1
+
+    else:
+        if not (current_gpa == 4.0):
+            print("A solid effort. Keep up the good work.")
+            current_gpa += 0.1
+        else:
+            print("You're already at a perfect GPA. Maintaining is the goal!")
+    study_hours -= 10
+else:
+    print("That subject is not a valid option. Your study hours are wasted.")
+    stress_level += 5
